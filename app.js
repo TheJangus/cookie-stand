@@ -1,7 +1,52 @@
 'use strict';
 
+// to hold all shops object things
+let allShops = [];
+
 // Array for business hours === data
 const  operatingHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+
+//more variables array holders
+let hourlyTotal = [];
+
+//constructor function
+function CookieShop(location, minHrCust, maxHrCust, customer, cookies, dailyTotal){
+    this.location = location;
+    this.minHrCust = minHrCust;
+    this.maxHrCust = maxHrCust;
+    this.customer = customer;
+    this.cookies = cookies;
+    this.dailyTotal = dailyTotal;
+    this.avgCookiesPerCust = avgCookiesPerCust;
+
+    allCookieShops.push(this);
+}
+//want to test
+debugger;
+
+//calls function to create arrays
+new CookieShop('Seattle', 23, 65, 6.3);
+new CookieShop('Tokyo', 3, 24, 1.2);
+new CookieShop('Dubai', 11, 38, 3.7);
+new CookieShop('Paris', 20, 38, 2.3);
+new CookieShop('Lima', 2, 16, 4.6);
+
+function renderallcookieshops(){
+    for(let i in allCookieShops){
+        allCookieShops[i].render();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 const seattle = {
