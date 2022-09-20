@@ -3,6 +3,30 @@
 // Array for business hours === data
 const  operatingHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
+let allCookieShops = [];
+
+function CookieShop(location, minHrCust, maxHrCust, customer, cookies, dailyTotal){
+this.location = location;
+this.minHrCust = minHrCust;
+this.maxHrCust = maxHrCust;
+this.customer = customer;
+this.cookies = cookkies;
+this.dailyTotal = dailyTotal;
+this.avgCookiesPerCust = avgCookiesPerCust;
+allCookieShops.push(this);
+}
+
+CookieShop.prototype.custPerHour = function(){
+    for(let i = 0; i < operatingHours.length; i++){
+        return Math.floor(Math.random() * (this.maxHrCust - this.minHrCust + 1) + this.minHrCust);
+    }
+}
+CookieShop.prototype.cookiesPerHr = function(){
+    for(let i = 0; i < this.customer.length; i++){
+        this.cookies[i] = Math.roundNum(this.customer[i] * this.avgCookiesPerCust);
+        this.dailyTotal += this.cookies[i];
+    }
+
 
 const seattle = {
     name: 'Seattle',
@@ -48,6 +72,12 @@ const seattle = {
         list.appendChild(totalListItem);
         totalListItem.textContent = `${this.name} Total: ${this.dailyTotal} cookies`;
     },
+}
+CookieShop.prototype.render = function(){
+    let trElem = document.createElement('tr');
+    let thElem = document.createElement('th');
+    thElem.textContent = this.location;
+    trElem.appendChild(thElem);
 }
 seattle.displayCookies();
 console.log(seattle);

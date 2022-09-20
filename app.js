@@ -1,7 +1,7 @@
 'use strict';
 
 // to hold all shops object things
-let allShops = [];
+let allCookieShops = [];
 
 // Array for business hours === data
 const  operatingHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
@@ -39,7 +39,7 @@ CookieShop.prototype.cookiesPerHr = function(){
 function renderHeaders(){
     let trE1 = document.createElement('tr');
     let thE1 = document.createElement('th');
-    thE1.textContent = 'location';
+    thE1.textContent = 'Location';
     trE1.appendChild(thE1);
     for (let i = 0; i < operatingHours.length; i++){
         thE1 = document.createElement('th');
@@ -56,7 +56,20 @@ CookieShop.prototype.render = function(){
     let tdElem = document.createElement('td');
     thElem.textContent = this.location;
     trElem.appendChild(tdElem);
-}
+
+    for (let i = 0; i < operatingHours.length; i++);
+    tdElem = document.createElement('td');
+    tdElem.textContent = this.dailyTotal;
+    trElem.appendChild(tdElem);
+    locationTable.appendChild(trElem);
+};
+function renderallcookieshops(){
+    locationTotal.innerHTML = '';
+    renderHeaders
+    for(let i in allCookieShops){
+        allCookieShops[i].render();
+    }
+};
 //calls function to create arrays
 new CookieShop('Seattle', 23, 65, 6.3);
 new CookieShop('Tokyo', 3, 24, 1.2);
@@ -64,9 +77,5 @@ new CookieShop('Dubai', 11, 38, 3.7);
 new CookieShop('Paris', 20, 38, 2.3);
 new CookieShop('Lima', 2, 16, 4.6);
 
-function renderallcookieshops(){
-    for(let i in allCookieShops){
-        allCookieShops[i].render();
-    }
-}
+
 //
