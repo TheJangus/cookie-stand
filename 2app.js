@@ -10,7 +10,7 @@ this.location = location;
 this.minHrCust = minHrCust;
 this.maxHrCust = maxHrCust;
 this.customer = customer;
-this.cookies = cookkies;
+this.cookies = cookies;
 this.dailyTotal = dailyTotal;
 this.avgCookiesPerCust = avgCookiesPerCust;
 allCookieShops.push(this);
