@@ -93,7 +93,7 @@ renderAllCookieShops();
 
 console.log(locations);
 
-//-------
+//-------footlong
 function createFooter(){
     let trFoot = document.createElement("tfoot");
     let trElem = document.createElement("tr");
