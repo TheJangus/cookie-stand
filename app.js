@@ -4,6 +4,8 @@
 let allCookieShops = [];
 //get cookie sold to table
 let locationTable = document.getElementById('locationSales');
+//let cookieCafeSales = document.createElement("table");
+//cookieCafeSales.appendChild(tableElem);
 
 // Array for business hours === data
 const  operatingHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
@@ -28,7 +30,10 @@ function CookieShop(location, minHrCust, maxHrCust, cookiesPerSale){
 
 CookieShop.prototype.custPerHour = function(){
     for(let i = 0; i < operatingHours.length; i++){
-        return Math.floor(Math.random()*(this.maxHrCust - this.minHrCust + 1) + this.minHrCust);
+        //add this line, took out return in front of math.floor
+        this.customer.push(
+         Math.floor(Math.random()*(this.maxHrCust - this.minHrCust + 1) + this.minHrCust);
+        )
     }
 }
 
@@ -76,7 +81,7 @@ CookieShop.prototype.render = function(){
     locationTable.appendChild(trElem);
 };
 
-function renderAllCookieShops(){
+function renderAll(){
     locationTotal.innerHTML = '';
     renderHeaders
     for(let i in allCookieShops){
@@ -84,6 +89,32 @@ function renderAllCookieShops(){
     }
 };
 
+renderAllCookieShops();
 
+console.log(locations);
 
-//
+//-------
+function createFooter(){
+    let trFoot = document.createElement("tfoot");
+    let trElem = document.createElement("tr");
+    let tdElem = document.createElement("td");
+    tdElem.textContent = "Hourly Totals";
+    trFoot.appendChild(trElem);
+    trElem.appendChild(tdElem);
+    tableElem.appendChild(trFoot);
+    
+    let grandTotal = 0;
+
+    for (let i = 0; i < operatingHours.length; i++){
+        let tdElem = document.createElement("td");
+        let hourlyTotal = 0;
+
+        for (let j = 0; j < allCookieShops.length; j++){
+            hourlyTotal += allCookieShops[j].hourlyTotal[i];
+            grandTotal += allCookieShops[j].hourlyTotal[i];
+        }
+        let td2Elem=document.createElement("td");
+        trElem.appendChild(td2Elem);
+        td2Elem.textContent = grandTotal;
+    }
+}

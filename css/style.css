@@ -1,3 +1,38 @@
-* {
-    font-family: Arial, sans-serif;
-  }
+body {
+  font-family: fantasy, sans-serif;
+  color: rgb(116, 46, 46);
+}
+
+html{
+background: linear-gradient(225deg, #fa8072, #ffffff);
+}
+
+chinook {
+  width: 250px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+cutter {
+  width: 30px;
+  padding: 5px 5px;
+}
+
+family {
+  width: 700px;
+  margin-top: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+fish {
+  width: 400px
+}
+
+fcookie {
+  
+}
