@@ -148,6 +148,72 @@ createFooter();
 ////    }
 //};
 
+function handleClick(event){
+
+    //if else if else statements
+}
+
+//callback function (event handler) = that function passed into another function
+myContainer.addEventListener('click',handleClick());
 
 
-//
+// #Pragma mark Step 1: GRAB ELEMENT WE WANT TO LISTEN TO
+let myForm = document.getElementById("my=form"),
+
+//STEP 2: ADD EVENT LISTENER -- WILL BE BELOW STEP 3!!
+myForm.addEventListener('submit', handleSubmit),
+
+//STEP 3: ABOVE STEP 2 :DEFINE OUR EVENT HANDLER (CALL BACK FUNCTION)
+//CALLED ON SUBMIT ACTION
+function handleSubmit(event) {
+   
+    event.preventDefault();
+
+    let name = event.target.kittenName.value;
+    let photo = event.target.photo.value;
+
+    let interests = event.target.interests.value;
+    // interests, interests, interests >> ['interest', ' interest', 'interest']
+    interests = interests.split(',')
+    console.log(interests):
+
+    let isGoodWithDogs = event.target.dogs.checked;
+    let isGoodWithCats = event.target.cats.checked;
+
+    let newKitten = new Kitten(name, interests, isGoodWithDogs, isGoodWithCats, photo);
+
+    newKitten.getAge();
+    newKitten.render();
+
+    //clear form//
+    myForm.reset();
+
+    let name = event.target.firstName.value;
+    console.log(name):
+
+    //~~  for the let sum
+    let age = ~~event.target.age.value;
+    console.log(age):
+    console.log(typeof age)
+
+    let someNum = 5 + age;
+    console.log(sumNum);
+
+    myForm.reset();
+}
+
+// LAB HINT - REMOVE FOOTER, ADD YOUR ROW, RE-ADD YOUR FOOTER
+
+let newLoc = new CookieShop(location, minHrCust, maxHrCust, cookiesPerSale){
+    //The parseInt() function parses a string and returns an integer.
+    event.target.shopLocation.value;
+    let newMinCust = parseInt(event.target.minCust.value);
+    let newMaxCust = parseInt(event.target.maxCust.value);
+    let newCookiesPerSale = parseInt(event.target.cookiesPerSale.value);
+  // New Keyword to call to function creates a new object
+    new CookieShop(newLoc, newMinCust, newMaxCust, newCookiesPerSale);
+ }
+ 
+ //Event Listener to Form
+ cookieShopForm.addEventListener('submit', addNewCookieShop);
+ 

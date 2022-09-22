@@ -9,6 +9,59 @@
       <h1>Salmon Cookies</h1>
     </header>
     <main>
+
+      <form id="my-form">
+        <fieldset>
+          <legend>Basic Info</legend>
+          <label for="kittenname">Kitten name</label>
+          <input id="kittenname" type="text" name="kittenname">
+
+          <label for="interests">Interests</label> 
+          /<!---please seperate with commas-->
+
+          <label for="photo">photo></label>
+          <input id="photo" type="text" name="photo">
+        </fieldset>
+        <fieldset>
+          <legend>Temperment</legend>
+
+          <label for="dogs">Good with dogs</label>
+          <input id="dogs" type="checkbox" name="dogs">
+
+          <label for="cats">Good with dogs</label>
+          <input id="cats" type="checkbox" name="cats">
+          <!--event.target.kids.checked-->
+        </fieldset>
+      </form>
+      <button type="submit">submit></button>
+
+      <form id="my-form">
+          <fieldset>
+            <legend>Fieldset Context</legend>
+            <!----inputs and labels: 2 options-->
+            <!---Option 1: elements are siblings-->
+            <label for="firstName">Name:</label>
+            <input id="firsName" type="text" name="firstName">
+            <!--event.target.firstName.value == whatever user inputs -->
+            <!----option 2: next labl and input field -->
+            <label>Age
+                <input type="number" name="age" required>
+                <!--event.target.age.value === whatever user inputs-->
+            </label>
+
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password">
+
+            <select name="reality-tv" id="reality-tv">
+              <option value="default">Pick a Show</option>
+              <option value="bh">Beverly Hills</option>
+              <option value="bachelor">Bachelor</option>
+              <option valuie="first-sight">Married at First Sight</option>
+            </select>
+            <!---event.target.reality-tv.value-->
+            </fieldset>
+            <button type="submit">submit></button>
+      </form>
       <h2></h2>
       <div>
         <!-- generate this from js: -->
