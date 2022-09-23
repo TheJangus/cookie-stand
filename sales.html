@@ -10,21 +10,38 @@
         <nav>
           <h1><a href="index.html">Home</a></h1>
         </nav>
+        <nav>
+          <ul>
+            <li><a href="store.html">Shop</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="xxxxxx.html">xxxxxx</a></li>
+          </ul>
+        </nav>
     </header>
     <div>
       <h1></h1>
     </div>
     <main>
+      <section id="form">
+        <form id="add-shop-form">
+          <fieldset>
+            <legend>Add New Location</legend>
+            <label for="name">Name: </label>
+            <input id="name" name="name" type="text" />
+
+            <label for="minCustomers">Minimum Customers: </label>
+            <input id="minCustomers" name="minCustomers" type="number" />
+
+            <label for="maxCustomers">Maximum Customers: </label>
+            <input id="maxCustomers" name="maxCustomers" type="number" />
+
+            <label for="cookiesPerSale">Average Sale: </label>
+            <input id="cookiesPerSale" name="cookiesPerSale" type="number" />
+
+            <button type="submit">Add Location</button>
+        </form>
+      </section>
       <section id="results"></section>
-        <!-- generate this from js: -->
-        <!-- <article>
-          <h2></h2>
-          <p></p>
-          <ul>
-            <li></li>
-          </ul>
-          <img>
-        <</article> -->>
           <table align=center id="locationSales"></table>
     </main>
     <footer>
