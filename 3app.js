@@ -217,3 +217,9 @@ let newLoc = new CookieShop(location, minHrCust, maxHrCust, cookiesPerSale){
  //Event Listener to Form
  cookieShopForm.addEventListener('submit', addNewCookieShop);
  
+
+ CookieShop.prototype.dailyTotal = function(){
+    this.dailyTotal = this.cookies.reduce(function (a,b){
+        return a + b;
+    });
+}
